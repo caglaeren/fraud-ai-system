@@ -5,6 +5,14 @@
 ![Machine Learning](https://img.shields.io/badge/MachineLearning-FraudDetection-green)
 ![Imbalanced Data](https://img.shields.io/badge/Data-Imbalanced-red)
 
+## 🌍 Documentation
+
+Choose your preferred language:
+
+🇬🇧 English: [README.md](README.md)  
+🇹🇷 Turkish: [tr.md](tr.md) 
+
+---
 
 A machine learning system designed to detect fraudulent credit card transactions using a neural network model trained on highly imbalanced financial data.
 
