@@ -1,7 +1,8 @@
-tensorflow
 numpy
 pandas
-scikit-learn
 matplotlib
-seaborn
+scikit-learn
+tensorflow
 imbalanced-learn
+pyyaml
+seaborn

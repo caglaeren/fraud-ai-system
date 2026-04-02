@@ -1,0 +1,61 @@
+# Fraud Detection System Configuration
+# Bu dosya tüm hyperparameter'ları içerir
+
+# Veri Ayarları
+data:
+  path: "data/creditcard.csv"
+  test_size: 0.2
+  random_state: 42
+
+# Model Mimarisi
+model:
+  input_dim: 30
+  hidden_layers: [128, 64, 32, 16]
+  dropout_rate: 0.3
+  use_batch_norm: true
+  activation: "relu"
+  output_activation: "sigmoid"
+
+# Eğitim Ayarları
+training:
+  epochs: 50
+  batch_size: 2048
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  early_stopping:
+    enabled: true
+    patience: 5
+    monitor: "val_loss"
+  learning_rate_scheduler:
+    enabled: true
+    factor: 0.5
+    patience: 3
+
+# Oversampling
+sampling:
+  method: "smote"  # options: oversample, undersample, smote
+
+# Değerlendirme
+evaluation:
+  default_threshold: 0.5
+  threshold_range: [0.1, 0.9]
+  threshold_step: 0.05
+
+# Model Kaydetme
+checkpoint:
+  save_dir: "models/"
+  save_best_only: true
+  monitor: "val_f1_score"
+
+# Logging
+logging:
+  enabled: true
+  log_dir: "logs/"
+  tensorboard: false
+
+# API
+api:
+  enabled: false
+  host: "0.0.0.0"
+  port: 8000
